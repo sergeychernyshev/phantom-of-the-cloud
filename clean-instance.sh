@@ -3,10 +3,11 @@
 # This script cleans the instance so it can be re-AMI-ized
 # 
 
-# History cleanup
+# History and dev cleanup
 rm -f ~/.bash_history
 rm -f ~/.viminfo
 rm -f ~/.lesshst
+rm .gitconfig
 
 # User-data cleanup
 rm -rf ~/user-repo
