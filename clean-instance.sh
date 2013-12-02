@@ -7,7 +7,7 @@
 rm -f ~/.bash_history
 rm -f ~/.viminfo
 rm -f ~/.lesshst
-rm .gitconfig
+rm -f ~/.gitconfig
 
 # User-data cleanup
 rm -rf ~/user-repo
