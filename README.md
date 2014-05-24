@@ -1,4 +1,4 @@
-Phantom Of The Cloud
+Phantom Of The Cloud v0.6 (ami-3a6f8452)
 ====================
 
 To use this Amazon AMI, just launch an instance and send following values within user data:
