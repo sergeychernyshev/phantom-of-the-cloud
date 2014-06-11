@@ -6,8 +6,7 @@
 # description: Gets user's code from repository provided in user-data and initializes it 
 #
 
-echo "PhantomOfTheCloud boot.sh starting" >/tmp/boot.log
->/tmp/boot.err
+echo "PhantomOfTheCloud boot.sh starting" >/tmp/boot.log >/tmp/boot.err
 
 REPO=`/usr/bin/curl -s http://169.254.169.254/latest/user-data | grep 'git-repo:' | sed -e 's/git-repo: //'`
 TARBALL=`/usr/bin/curl -s http://169.254.169.254/latest/user-data | grep 'tarball-repo:' | sed -e 's/tarball-repo: //'`
