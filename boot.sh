@@ -10,15 +10,20 @@ echo "PhantomOfTheCloud boot.sh starting" >/tmp/boot.log
 >/tmp/boot.err
 
 REPO=`/usr/bin/curl -s http://169.254.169.254/latest/user-data | grep 'git-repo:' | sed -e 's/git-repo: //'`
+TARBALL=`/usr/bin/curl -s http://169.254.169.254/latest/user-data | grep 'tarball-repo:' | sed -e 's/tarball-repo: //'`
+
 AWS_KEY=`/usr/bin/curl -s http://169.254.169.254/latest/user-data | grep 'aws-key:' | sed -e 's/aws-key: //'`
 AWS_SECRET=`/usr/bin/curl -s http://169.254.169.254/latest/user-data | grep 'aws-secret:' | sed -e 's/aws-secret: //'`
+AWS_REGION=`/usr/bin/curl -s http://169.254.169.254/latest/user-data | grep 'aws-region:' | sed -e 's/aws-region: //'`
 
 echo "[aws]" >/home/ec2-user/system.ini
 echo "aws-key = $AWS_KEY" >>/home/ec2-user/system.ini
 echo "aws-secret = $AWS_SECRET" >>/home/ec2-user/system.ini
+echo "aws-region = $AWS_REGION" >>/home/ec2-user/system.ini
 echo "" >>/home/ec2-user/system.ini
 echo "[repo]" >>/home/ec2-user/system.ini
 echo "git-repo = $REPO" >>/home/ec2-user/system.ini
+echo "tarball-repo = $TARBALL" >>/home/ec2-user/system.ini
 
 # Getting the code from the repo provided in user data's git-repo attribute
 su -l ec2-user -c /home/ec2-user/update-repo.sh 2>>/tmp/boot.err >>/tmp/boot.log
