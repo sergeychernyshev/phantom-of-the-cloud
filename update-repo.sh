@@ -3,7 +3,7 @@
 REPO=`/usr/bin/curl -s http://169.254.169.254/latest/user-data | grep 'git-repo:' | sed -e 's/git-repo: //'`
 TARBALL=`/usr/bin/curl -s http://169.254.169.254/latest/user-data | grep 'tarball-repo:' | sed -e 's/tarball-repo: //'`
 
-if [ "x$REPO" -ne "x" ]; then
+if [ -n "$REPO" ]; then
 	if [ -d /home/ec2-user/user-repo ]; then
 		cd /home/ec2-user/user-repo
 		/usr/bin/git pull 
