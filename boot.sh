@@ -50,5 +50,5 @@ fi
 
 if [ -f /home/ec2-user/user-repo/queue-cli.conf ]; then
 	mkdir -p /etc/queue-cli
-	ln -s /home/ec2-user/user-repo/queue-cli.conf /etc/queue-cli/queue-cli.conf
+	ln -sf /home/ec2-user/user-repo/queue-cli.conf /etc/queue-cli/queue-cli.conf
 fi
