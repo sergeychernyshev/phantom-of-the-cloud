@@ -1,0 +1,3 @@
+[submodule "queue-cli"]
+	path = queue-cli
+	url = https://github.com/sergeychernyshev/queue-cli

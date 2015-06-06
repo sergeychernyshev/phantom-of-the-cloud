@@ -26,5 +26,6 @@ crontab -r
 
 # System info cleanup
 rm -f system.ini
+rm -f ~/.aws
 
 sudo rm -f /tmp/boot.err /tmp/boot.log

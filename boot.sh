@@ -24,6 +24,13 @@ echo "[repo]" >>/home/ec2-user/system.ini
 echo "git-repo = $REPO" >>/home/ec2-user/system.ini
 echo "tarball-repo = $TARBALL" >>/home/ec2-user/system.ini
 
+# More or less standard credentials file
+mkdir -p /home/ec2-user/.aws
+echo "[default]" >/home/ec2-user/.aws/credentials
+echo "region = $AWS_REGION" >/home/ec2-user/.aws/credentials
+echo "aws_access_key_id = $AWS_KEY" >/home/ec2-user/.aws/credentials
+echo "aws_secret_access_key = $AWS_SECRET" >/home/ec2-user/.aws/credentials
+
 # Getting the code from the repo provided in user data's git-repo attribute
 su -l ec2-user -c /home/ec2-user/update-repo.sh 2>>/tmp/boot.err >>/tmp/boot.log
 
@@ -41,3 +48,7 @@ if [ -d /home/ec2-user/user-repo/supervisord ]; then
 	supervisord -c /home/ec2-user/supervisord/supervisord.conf
 fi
 
+if [ -f /home/ec2-user/user-repo/queue-cli.conf ]; then
+	mkdir -p /etc/queue-cli
+	ln -s /home/ec2-user/user-repo/queue-cli.conf /etc/queue-cli/queue-cli.conf
+fi
