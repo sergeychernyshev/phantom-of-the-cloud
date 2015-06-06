@@ -3,3 +3,4 @@ phantomjs
 node_modules
 .npm
 .ssh
+.gitconfig
