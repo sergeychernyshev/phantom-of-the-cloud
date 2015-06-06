@@ -25,10 +25,12 @@ echo "git-repo = $REPO" >>/home/ec2-user/system.ini
 echo "tarball-repo = $TARBALL" >>/home/ec2-user/system.ini
 
 # More or less standard credentials file
+mkdir -p /home/ec2-user/.aws
 echo "[default]" >/home/ec2-user/.aws/credentials
 echo "region = $AWS_REGION" >>/home/ec2-user/.aws/credentials
 echo "aws_access_key_id = $AWS_KEY" >>/home/ec2-user/.aws/credentials
 echo "aws_secret_access_key = $AWS_SECRET" >>/home/ec2-user/.aws/credentials
+chown ec2-user.ec2-user -R /home/ec2-user/.aws
 
 # Getting the code from the repo provided in user data's git-repo attribute
 su -l ec2-user -c /home/ec2-user/update-repo.sh 2>>/tmp/boot.err >>/tmp/boot.log
