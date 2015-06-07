@@ -10,6 +10,8 @@ To use this Amazon AMI, just launch an instance and send following values within
 
 During boot process, this image will clone the repo you specified under `/home/ec2-user/urser-repo` folder and will create `/home/ec2-user/system.ini` file with specified parameters so your app can read them later.
 
+As alternative to `git-repo` you can use `tarball-repo` instead, your code will be downloaded and unpacked from the URL you provided.
+
 You should also include at least one of these files as part of your repo:
 * `/crontab` - crontab that will be installed for `ec2-user` user
 * `/init.sh` - shell script that will be executed after repo is cloned
