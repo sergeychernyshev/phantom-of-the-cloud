@@ -19,7 +19,7 @@ AWS_REGION=`/usr/bin/curl -s http://169.254.169.254/latest/user-data | grep 'aws
 echo "" >/home/ec2-user/system.ini
 
 # populate fiels with AWS credentials if set in user data (otherwise relies on IAM roles that work on library level)
-if [ -z "$AWS_KEY" ]; then
+if [ ! -z "$AWS_KEY" ]; then
 	echo "[aws]" >>/home/ec2-user/system.ini
 	echo "aws-key = $AWS_KEY" >>/home/ec2-user/system.ini
 	echo "aws-secret = $AWS_SECRET" >>/home/ec2-user/system.ini
