@@ -27,5 +27,6 @@ crontab -r
 # System info cleanup
 rm -f system.ini
 rm -rf ~/.aws
+sudo rm -rf /etc/queue-cli/
 
 sudo rm -f /tmp/boot.err /tmp/boot.log

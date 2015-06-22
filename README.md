@@ -1,5 +1,9 @@
-Phantom Of The Cloud v0.8.1 ([ami-83b55de8](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;search=ami-83b55de8;sort=name))
+Phantom Of The Cloud
 ====================
+v0.8.2 ([ami-c1d23aaa](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;search=ami-c1d23aaa;sort=name))
+--------------------
+
+![Login Screen](screenshot.png)
 
 To use this Amazon AMI, just launch an instance and send following values within user data:
 
