@@ -1,6 +1,6 @@
 Phantom Of The Cloud
 ====================
-v0.8.3 ([ami-838871e8](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;search=ami-838871e8;sort=name))
+v0.8.4 ([ami-0bfc2860 ](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;search=ami-0bfc2860 ;sort=name))
 --------------------
 
 ![Login Screen](screenshot.png)
